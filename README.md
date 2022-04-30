@@ -37,7 +37,7 @@ Post-2 ?) Go one level deeper on the scrapping of the groups we already have.
 
 ## Tech-stack
 
-Python libraries for scraping (Scrapy, possibly Beautiful Soup) and data analysis (Pandas, possibly a more text-related one). 
+Python libraries for scraping (Scrapy, possibly Beautiful Soup) and data analysis (Pandas, possibly a more text-related one). Basic scrape knowladge (some xpath selectors, simple header setting).
 
 
 ## Setup
