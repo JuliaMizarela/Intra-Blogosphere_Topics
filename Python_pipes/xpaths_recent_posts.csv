@@ -1,0 +1,3 @@
+name,codename,base_url,datetime,title,link,single_author,author,comments_amount,likes_amount,has_categories
+"Astral Codex Ten","ACT","https://astralcodexten.substack.com/","//time/@datetime","//a[@class='post-preview-title newsletter']/text()","//a[@class='post-preview-title newsletter']/@href",1,"Scott Alexander","//span[@class='comment-count']/text()","//span[@class='like-count']/text()",0
+"Marginal Revolution","MR","https://marginalrevolution.com/","//time/@datetime","//h2[@class='entry-title']/a/text()","//h2[@class='entry-title']/a/@href",0,"//span[@class='author']/a/text()","//li/a/span/text()",0,"/html/body/div/div/main/article/footer/section/ul[1]/li/a/span[@class='meta-text']/text()"
