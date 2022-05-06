@@ -26,10 +26,10 @@ class AstralCodexRecentPosts(scrapy.Spider):
         parts_xpaths = [xpath_title, xpath_datetime, xpath_comments_number, xpath_likes_number]
         parts = [self.extract_part(response, xpath) for xpath in parts_xpaths]
         parts_files = [
-            "astral_recent_titles.txt",
-            "astral_recent_datetimes.txt",
-            "astral_recent_comments_number.txt",
-            "astral_recent_likes_number.txt",
+            r"../Files/astral_recent_titles.txt",
+            r"../Files/astral_recent_datetimes.txt",
+            r"../Files/astral_recent_comments_number.txt",
+            r"../Files/astral_recent_likes_number.txt",
         ]
         _ = [
             self.write_recent_parts_to_file(parts[i], parts_files[i])

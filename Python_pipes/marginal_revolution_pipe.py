@@ -27,11 +27,11 @@ class MarginalRecentPosts(scrapy.Spider):
         parts_xpaths = [xpath_title, xpath_author, xpath_link, xpath_datetime, xpath_tags]
         parts = [self.extract_part(response, xpath) for xpath in parts_xpaths]
         parts_files = [
-            "marginal_recent_titles.txt",
-            "marginal_recent_authors.txt",
-            "marginal_recent_links.txt",
-            "marginal_recent_datetimes.txt",
-            "marginal_recent_tags.txt",
+            r"../Files/marginal_recent_titles.txt",
+            r"../Files/marginal_recent_authors.txt",
+            r"../Files/marginal_recent_links.txt",
+            r"../Files/marginal_recent_datetimes.txt",
+            r"../Files/marginal_recent_tags.txt",
         ]
         _ = [
             self.write_recent_parts_to_file(parts[i], parts_files[i])
