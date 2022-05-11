@@ -62,5 +62,5 @@ venv.bak/
 .spyproject
 
 # Project-specific folders
-Files/
+Files/*/
 
