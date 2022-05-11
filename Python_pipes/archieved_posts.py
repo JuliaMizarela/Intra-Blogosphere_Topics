@@ -87,7 +87,7 @@ class ArchievedPostsCrawler(PostsCrawler):
         if isinstance(self._xpath_author, str):
             self._author = self.extract_part(response, self._xpath_author)
         if isinstance(self._xpath_likes_amount, str):
-            if "script" in self._xpath_likes_amount and self._codename == "ACT":
+            if ("substack" in self._url) and ("script" in self._xpath_likes_amount):
                 javascript = response.xpath('//script[3]/text()').get()
                 data = chompjs.parse_js_object(javascript)
                 self._likes_amount = data["post"]["reactions"]["\u2764"]
@@ -141,6 +141,10 @@ class ArchievedPostsCrawler(PostsCrawler):
     def extract_archieved_links(self, response):
         if self._codename == "ACT":
             self._links = request_links_in_json_from_substack(domain = "astralcodexten", link_path = "canonical_url")
+            for href in self._links:
+                yield scrapy.Request(href, self.extract_post)
+        if self._codename == "AK":
+            self._links = request_links_in_json_from_substack(domain = "arnoldkling", link_path = "canonical_url")
             for href in self._links:
                 yield scrapy.Request(href, self.extract_post)
         if self._codename == "SSC":

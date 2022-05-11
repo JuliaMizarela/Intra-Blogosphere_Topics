@@ -24,8 +24,6 @@ def request_links_in_json_from_substack(domain = "astralcodexten", link_path = "
         r = response.json()
         if len(r) < 1:
             break
-        if offset > 11:
-            break
         links = [r[i][link_path] for i in range(len(r))]
         link_list = *link_list, *links
         offset += limit
